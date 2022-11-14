@@ -1,0 +1,653 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /state/{id}:
+    get:
+      tags:
+        - state-controller
+      operationId: lista_6
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+    put:
+      tags:
+        - state-controller
+      operationId: atualizar_1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StateForm'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+    post:
+      tags:
+        - state-controller
+      operationId: lista_8
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+    delete:
+      tags:
+        - state-controller
+      operationId: remover_1
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/StateDto'
+                  - type: object
+    options:
+      tags:
+        - state-controller
+      operationId: lista_10
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+    head:
+      tags:
+        - state-controller
+      operationId: lista_7
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+    patch:
+      tags:
+        - state-controller
+      operationId: lista_9
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/StateDto'
+  /state:
+    get:
+      tags:
+        - state-controller
+      operationId: lista
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    put:
+      tags:
+        - state-controller
+      operationId: lista_2
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    post:
+      tags:
+        - state-controller
+      operationId: cadastrar_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StateForm'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                oneOf:
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/StateDto'
+                  - $ref: '#/components/schemas/StateDto'
+    delete:
+      tags:
+        - state-controller
+      operationId: lista_4
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    options:
+      tags:
+        - state-controller
+      operationId: lista_5
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    head:
+      tags:
+        - state-controller
+      operationId: lista_1
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    patch:
+      tags:
+        - state-controller
+      operationId: lista_3
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+  /state/regiao/{regiao}:
+    get:
+      tags:
+        - state-controller
+      operationId: lista_11
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    put:
+      tags:
+        - state-controller
+      operationId: lista_14
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    post:
+      tags:
+        - state-controller
+      operationId: lista_13
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    delete:
+      tags:
+        - state-controller
+      operationId: lista_16
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    options:
+      tags:
+        - state-controller
+      operationId: lista_17
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    head:
+      tags:
+        - state-controller
+      operationId: lista_12
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    patch:
+      tags:
+        - state-controller
+      operationId: lista_15
+      parameters:
+        - name: regiao
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - Norte
+              - Nordeste
+              - Sul
+              - Sudeste
+              - CentroOeste
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+  /state/population:
+    get:
+      tags:
+        - state-controller
+      operationId: listaPopulation
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    put:
+      tags:
+        - state-controller
+      operationId: listaPopulation_3
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    post:
+      tags:
+        - state-controller
+      operationId: listaPopulation_2
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    delete:
+      tags:
+        - state-controller
+      operationId: listaPopulation_5
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    options:
+      tags:
+        - state-controller
+      operationId: listaPopulation_6
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    head:
+      tags:
+        - state-controller
+      operationId: listaPopulation_1
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    patch:
+      tags:
+        - state-controller
+      operationId: listaPopulation_4
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+  /state/area:
+    get:
+      tags:
+        - state-controller
+      operationId: listaArea
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    put:
+      tags:
+        - state-controller
+      operationId: listaArea_3
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    post:
+      tags:
+        - state-controller
+      operationId: listaArea_2
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    delete:
+      tags:
+        - state-controller
+      operationId: listaArea_5
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    options:
+      tags:
+        - state-controller
+      operationId: listaArea_6
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    head:
+      tags:
+        - state-controller
+      operationId: listaArea_1
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+    patch:
+      tags:
+        - state-controller
+      operationId: listaArea_4
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateDto'
+components:
+  schemas:
+    StateForm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        regiao:
+          type: string
+          enum:
+            - Norte
+            - Nordeste
+            - Sul
+            - Sudeste
+            - CentroOeste
+        populacao:
+          type: integer
+          format: int64
+        capital:
+          type: string
+        area:
+          type: integer
+          format: int64
+    StateDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        regiao:
+          type: string
+          enum:
+            - Norte
+            - Nordeste
+            - Sul
+            - Sudeste
+            - CentroOeste
+        populacao:
+          type: integer
+          format: int64
+        capital:
+          type: string
+        area:
+          type: integer
+          format: int64
